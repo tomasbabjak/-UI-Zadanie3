@@ -1,0 +1,41 @@
+Mapa 1
+
+    private static final int NUMBEROFSTONES = 6;
+    private static final int X = 12;
+    private static final int Y = 10;
+
+        gardenMap[2][1] = STONE;
+        gardenMap[4][2] = STONE;
+        gardenMap[3][4] = STONE;
+        gardenMap[1][5] = STONE;
+        gardenMap[6][8] = STONE;
+        gardenMap[6][9] = STONE;
+
+0  0  0  0  0  0  0  0  0  0  0  0
+0  0  0  0  0  -1  0  0  0  0  0  0
+0  -1  0  0  0  0  0  0  0  0  0  0
+0  0  0  0  -1  0  0  0  0  0  0  0
+0  0  -1  0  0  0  0  0  0  0  0  0
+0  0  0  0  0  0  0  0  0  0  0  0
+0  0  0  0  0  0  0  0  -1  -1  0  0
+0  0  0  0  0  0  0  0  0  0  0  0
+0  0  0  0  0  0  0  0  0  0  0  0
+0  0  0  0  0  0  0  0  0  0  0  0
+
+Mapa 2
+
+    private static final int NUMBEROFSTONES = 4;
+    private static final int X = 10;
+    private static final int Y = 6;
+
+        gardenMap[1][8] = STONE;
+        gardenMap[2][2] = STONE;
+        gardenMap[3][7] = STONE;
+        gardenMap[4][1] = STONE;
+
+0  0  0  0  0  0  0  0  0  0 
+0  0  0  0  0  0  0  0  -1  0
+0  0  -1  0  0  0  0  0  0  0  
+0  0  0  0  0  0  0  -1  0  0  
+0  -1  0  0  0  0  0  0  0  0  
+0  0  0  0  0  0  0  0  0  0    
