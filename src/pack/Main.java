@@ -7,15 +7,16 @@ import java.io.InputStreamReader;
 
 public class Main {
 
-    private static final int NUMBEROFSTONES = 4;
+    private static final int NUMBEROFSTONES = 6;
     private static final int NUMBEROFMONKS = 100;
-    private static final int X = 10;
-    private static final int Y = 6;
+    private static final int NUMBEROFREPS = 200;
+    private static final int X = 12;
+    private static final int Y = 10;
 
     public static void main(String[] args) {
 
         int sum = 0;
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < NUMBEROFREPS; i++) {
             Evolution e = new Evolution(NUMBEROFMONKS, NUMBEROFSTONES, X, Y);
             try {
                 e.initialize();
@@ -45,6 +46,6 @@ public class Main {
             } catch (IOException ex3) {
             }
         }
-        System.out.print("Priemerny pocet mnichov je " + sum/100);
+        System.out.print("Priemerny pocet mnichov je " + sum/NUMBEROFREPS);
     }
 }

@@ -12,7 +12,7 @@ public class Garden {
     public static final int STONE = -1;
 
     public int [][] gardenMap;
-    public int numberOfStones = 4;
+    //public int numberOfStones = 6;
     public int x,y;
 
     /**
@@ -38,13 +38,21 @@ public class Garden {
     public void insertStone(){
 
         //Random ran = new Random();
-        //gardenMap[ran.nextInt(y)][ran.nextInt(x)] = -1;
-        gardenMap[1][8] = STONE;
-        gardenMap[2][2] = STONE;
-        gardenMap[3][7] = STONE;
-        gardenMap[4][1] = STONE;
-       // gardenMap[6][8] = STONE;
-       // gardenMap[6][9] = STONE;
+        //gardenMap[ran.nextInt(y)][ran.nextInt(x)] = -1
+
+//        Map 2:
+//        gardenMap[1][8] = STONE;
+//        gardenMap[2][2] = STONE;
+//        gardenMap[3][7] = STONE;
+//        gardenMap[4][1] = STONE;
+
+        //Map 1:
+        gardenMap[2][1] = STONE;
+        gardenMap[4][2] = STONE;
+        gardenMap[3][4] = STONE;
+        gardenMap[1][5] = STONE;
+        gardenMap[6][8] = STONE;
+        gardenMap[6][9] = STONE;
 
     }
 

@@ -38,7 +38,7 @@ public class Monk {
     }
 
     /**
-     * Funkci na výpis génov mnícha.
+     * Funkcia na výpis génov mnícha.
      */
     public void printGenes() {
 
