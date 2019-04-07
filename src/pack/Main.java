@@ -6,7 +6,7 @@ public class Main {
 
     private static final int NUMBEROFSTONES = 6;
     private static final int NUMBEROFMONKS = 100;
-    private static final int NUMBEROFREPS = 1000;
+    private static final int NUMBEROFREPS = 100;
     private static final int X = 12;
     private static final int Y = 10;
 
@@ -30,7 +30,7 @@ public class Main {
 
             String line = reader.readLine();
             while (line != null) {
-                System.out.println(line);
+                //System.out.println(line);
                 sum = sum + Integer.parseInt(line);
                 line = reader.readLine();
             }

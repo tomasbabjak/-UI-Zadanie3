@@ -10,7 +10,8 @@ import static java.lang.Math.abs;
 
 public class Evolution {
 
-    private static final int EVOLUTIONTYPE = 7;
+    private static final int EVOLUTIONTYPE = 4;
+    private static final int MAXGENERATIONS = 5000;
 
     public int numberOfMonks;
     double sum = 0;
@@ -83,7 +84,7 @@ public class Evolution {
      * Funkcia, ktorá vylepšuje starú generáciu a nahrádza ju novou, vyvynutou generáciou mníchov.
      * Robí to podobne ako funkcia initialize, ale namiesto vygenerovania náhodných génov pre jedincov,
      * volá na základe hodnoty v EVOLUTIONTYPE funkcie evolve, ktoré vylepšujú gény jedincov napríklad kríženiami alebo mutáciami.
-     * Následne sa vykoná hrabanie záhradky novou generáciou mnácho, vyhodnotí sa ich fitness a sila a zistí sa, či sa v novej populácii nenašiel mních, ktorý pohrabal celú záhradku.
+     * Následne sa vykoná hrabanie záhradky novou generáciou mníchov, vyhodnotí sa ich fitness a sila a zistí sa, či sa v novej populácii nenašiel mních, ktorý pohrabal celú záhradku.
      * Ak sa našiel, ukončí sa vykonávanie procedúry a prípadne sa vyhodnotia populácie a mních, v opačnom prípade sa opäť zavolá procedúra newPopulation(), ale s novou populáciou ako parametrom.
      * @param population
      * @throws IOException
@@ -157,13 +158,15 @@ public class Evolution {
         for (int i = 0; i < numberOfMonks; i++) {
             sumFitness = sumFitness + population[i].fitness;
         }
-
-       // System.out.print(" Average fitness is " + sumFitness/numberOfMonks + " Max fitness is " + population[0].fitness + "\n");
+        System.out.print(" Average fitness is " + sumFitness/numberOfMonks + " Max fitness is " + population[0].fitness + "\n");
         //average fitness
 
         //Evaluate()
-        if (best == mexPossible) {
-            Monk m = new Monk(x,y,numberOfStones);
+        if (best == mexPossible || generationCounter == MAXGENERATIONS) {
+            if(generationCounter == MAXGENERATIONS) {
+                System.out.print("\nNumber of generations has been exceeded.\n");
+            }
+                Monk m = new Monk(x,y,numberOfStones);
             m.numberOfGenes = m.x + m.y + m.numberOfStones;
             m.genes = new int[m.numberOfGenes];
 
@@ -189,7 +192,12 @@ public class Evolution {
     }
 
     /**
-     * Keď vyjde čas treba refaktoring..
+     * Funkcie evolve1 až 7 slúžia na kríženie a mutácie génov rôznymi spôsobmi a testujeme nimi efektivitu týchto spôsobov.
+     * Funkcie vznikali postupne, funkcia 1 bola prvá a obsahovala kríženie a mutácie všetkých druhov.
+     * Evolve2 obsahuje výber rodičov iba ruletov, zatiaľ čo evolve3 iba turnajom.
+     * Evolve4 obsahuje iba kríženie jedincov(nepočítajúc náhodnú generáciu ako mutáciu) a evolve5 iba mutácie.
+     * Funkcia evolve6 vznikla ako vhodné spojenie toho najlepšieho z funkcii 4 a 2 a funkcie evolve7 na testovanie iba s náhodnými číslami bez krížení a mutácii.
+     * Funkcie evolve21, 41 a 51 sú to isté ako 2,4 a 5 ale s použítim rulety s vyhodnocovaním fitness a nie sily.
      * Na refaktoring týchto funkcii už nevyšiel čas :)
      * @param m
      * @param index
