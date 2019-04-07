@@ -1,15 +1,12 @@
 package pack;
 
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 
 public class Main {
 
     private static final int NUMBEROFSTONES = 6;
     private static final int NUMBEROFMONKS = 100;
-    private static final int NUMBEROFREPS = 200;
+    private static final int NUMBEROFREPS = 1000;
     private static final int X = 12;
     private static final int Y = 10;
 
@@ -46,6 +43,17 @@ public class Main {
             } catch (IOException ex3) {
             }
         }
-        System.out.print("Priemerny pocet mnichov je " + sum/NUMBEROFREPS);
+        File file = new File("evo3000.txt");
+
+        if(file.delete())
+        {
+            System.out.println("File deleted successfully");
+        }
+        else
+        {
+            System.out.println("Failed to delete the file");
+        }
+
+        System.out.print("Priemerny pocet generácií mnichov je " + sum/NUMBEROFREPS);
     }
 }

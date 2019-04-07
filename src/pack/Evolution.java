@@ -179,7 +179,7 @@ public class Evolution {
             outputStream.write(strToBytes);
             outputStream.close();
 
-            System.out.print("\n + Number of generations: " + generationCounter + "\n");
+            System.out.print("\nNumber of generations: " + generationCounter + "\n");
             m.rakeGarden(true);
             return;
         }
@@ -188,6 +188,13 @@ public class Evolution {
 
     }
 
+    /**
+     * Keď vyjde čas treba refaktoring..
+     * Na refaktoring týchto funkcii už nevyšiel čas :)
+     * @param m
+     * @param index
+     * @param population
+     */
     public void evolve1(Monk m, int index, Monk[] population) {
 
         if (index < numberOfMonks / 10) elitism(m, index, population); //0..9
@@ -349,8 +356,7 @@ public class Evolution {
     public void mutationComplementTournament(Monk m, Monk[] population) {
 
         int parent1 = tournament(population);
-        for (int i = 0; i < m.numberOfGenes; i++) {
-            //m.genes[i] = abs(m.numberOfGenes - population[parent1].genes[i]);
+        for (int i = (m.numberOfGenes/2); i < m.numberOfGenes; i++) {
             m.genes[i] = abs(2*(m.x+m.y) - population[parent1].genes[i]);
         }
     }
@@ -367,8 +373,7 @@ public class Evolution {
         if(myRoulette) parent1 = myRoulette(population);
         else parent1 = roulette(population);
 
-        for (int i = 0; i < m.numberOfGenes; i++) {
-            //m.genes[i] = abs(m.numberOfGenes - population[parent1].genes[i]);
+        for (int i = (m.numberOfGenes/2); i < m.numberOfGenes; i++) {
             m.genes[i] = abs(2*(m.x+m.y) - population[parent1].genes[i]);
 
         }
