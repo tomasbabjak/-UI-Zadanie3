@@ -1,13 +1,13 @@
 # UI Zadanie3
 
-**Strojové uèenie sa a evoluènı algoritmus a evoluèné programovanie**
+**StrojovÃ© uÄenie sa a evoluÄnÃ½ algoritmus a evoluÄnÃ© programovanie**
 
-**Autor:** Tomáš Babjak
+**Autor:** TomÃ¡Å¡ Babjak
 
-**Predmet:** Umelá inteligencia
+**Predmet:** UmelÃ¡ inteligencia
 
-Letnı semester 2018/2019
+LetnÃ½ semester 2018/2019
 
-**Zadanie:** Zenova záhrada
+**Zadanie:** Zenova zÃ¡hrada
 
-Dokumentáciu k zadaniu nájdete v UI_Zadanie3_Babjak_Tomas_91986_zs1819.pdf
+DokumentÃ¡ciu k zadaniu nÃ¡jdete v UI_Zadanie3_Babjak_Tomas_91986.pdf
